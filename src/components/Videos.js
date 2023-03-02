@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { YOUTUBE_API_BASE_URL } from "../utils/constants";
 import Video from "./Video";
 
 const Videos = () => {
@@ -10,13 +11,15 @@ const Videos = () => {
 
   async function getVideos() {
     const response = await fetch(
-      "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=US&maxResults=50&key=" +
+      YOUTUBE_API_BASE_URL +
+        "/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=US&maxResults=50&key=" +
         process.env.REACT_APP_YOUTUBE_API_KEY
     );
     const data = await response.json();
-    console.log(data);
+    // console.log(data?.items);
     setVideos(data?.items);
   }
+
   return (
     <section className="flex flex-wrap gap-5">
       {videos.map((video) => (

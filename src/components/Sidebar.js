@@ -1,18 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Sidebar = () => {
+  const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
   return (
     <aside className="fixed top-14">
       <ul>
         <li>
-          <Link to="/" className="flex items-center py-2">
-            <span className="block w-7 h-7 mx-1">
+          <Link to="/" className="flex items-center py-2 ">
+            <span className="block mx-1 ">
               <svg
                 viewBox="0 0 24 24"
                 preserveAspectRatio="xMidYMid meet"
                 focusable="false"
-                className="style-scope yt-icon"
+                className="style-scope yt-icon w-[28px] sm:w-[36px] md:mx-3 sm:p-1"
                 style={{
                   pointerEvents: "none",
                   display: "block",
@@ -26,17 +28,17 @@ const Sidebar = () => {
                 </g>
               </svg>
             </span>
-            <span>Home</span>
+            <span className={!isMenuOpen ? "text-white" : ""}>Home</span>
           </Link>
         </li>
         <li>
           <Link to="/shorts" className="flex items-center py-2">
-            <span className="block w-7 h-7 mx-1">
+            <span className="block mx-1">
               <svg
                 viewBox="0 0 24 24"
                 preserveAspectRatio="xMidYMid meet"
                 focusable="false"
-                className="style-scope yt-icon"
+                className="style-scope yt-icon w-[28px] sm:w-[36px] md:mx-3 sm:p-1"
                 style={{
                   pointerEvents: "none",
                   display: "block",
@@ -50,17 +52,17 @@ const Sidebar = () => {
                 </g>
               </svg>
             </span>
-            <span>Shorts</span>
+            <span className={!isMenuOpen ? "text-white" : ""}>Shorts</span>
           </Link>
         </li>
         <li>
           <Link to="/subscriptions" className="flex items-center py-2">
-            <span className="block w-7 h-7 mx-1">
+            <span className="block mx-1">
               <svg
                 viewBox="0 0 24 24"
                 preserveAspectRatio="xMidYMid meet"
                 focusable="false"
-                className="style-scope yt-icon"
+                className="style-scope yt-icon w-[28px] sm:w-[36px] md:mx-3 sm:p-1"
                 style={{
                   pointerEvents: "none",
                   display: "block",
@@ -74,17 +76,19 @@ const Sidebar = () => {
                 </g>
               </svg>
             </span>
-            <span>Subscriptions</span>
+            <span className={!isMenuOpen ? "text-white" : ""}>
+              Subscriptions
+            </span>
           </Link>
         </li>
         <li>
           <Link to="/library" className="flex items-center py-2">
-            <span className="block w-7 h-7 mx-1">
+            <span className="block mx-1">
               <svg
                 viewBox="0 0 24 24"
                 preserveAspectRatio="xMidYMid meet"
                 focusable="false"
-                className="style-scope yt-icon"
+                className="style-scope yt-icon w-[28px] sm:w-[36px] md:mx-3 sm:p-1"
                 style={{
                   pointerEvents: "none",
                   display: "block",
@@ -98,7 +102,7 @@ const Sidebar = () => {
                 </g>
               </svg>
             </span>
-            <span>Library</span>
+            <span className={!isMenuOpen ? "text-white" : ""}>Library</span>
           </Link>
         </li>
       </ul>

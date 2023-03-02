@@ -11,9 +11,9 @@ const Header = () => {
     dispatch(toggleMenu());
   };
   return (
-    <header className="flex min-h-[56px] items-center justify-between sm:grid sm:grid-cols-[160px_1fr_160px]">
+    <header className="fixed z-10 bg-white w-full flex min-h-[56px] items-center justify-between sm:grid sm:grid-cols-[160px_1fr_160px]">
       <div className="flex">
-        <button className="sm:mx-1" onClick={() => menuClickHandler()}>
+        <button className="sm:mx-1 md:mx-4" onClick={() => menuClickHandler()}>
           <svg
             viewBox="0 0 24 24"
             preserveAspectRatio="xMidYMid meet"
