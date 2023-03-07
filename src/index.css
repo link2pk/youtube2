@@ -25,4 +25,10 @@
 
         
     }
+    .videos > a{
+        max-width: 320px;
+    }
+    .menu-open .videos > a{
+        max-width: 250px;
+    }
 }

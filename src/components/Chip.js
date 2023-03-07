@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { YOUTUBE_API_BASE_URL } from "../utils/constants";
+import React from "react";
 
 const Chip = ({ info }) => {
   //   console.log(info);

@@ -9,6 +9,7 @@ import Home from "./components/Home";
 import Shorts from "./components/Shorts";
 import Subscriptions from "./components/Subscriptions";
 import Library from "./components/Library";
+import Watch from "./components/Watch";
 
 const appRouter = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/library",
         element: <Library />,
+      },
+      {
+        path: "/watch",
+        element: <Watch />,
       },
     ],
   },
