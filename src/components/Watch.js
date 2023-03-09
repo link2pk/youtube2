@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import RelatedVideos from "./RelatedVideos";
 import useRelatedVideos from "../utils/useRelatedVideos";
@@ -7,15 +7,16 @@ import WatchVideoInfo from "./WatchVideoInfo";
 
 const Watch = () => {
   const [searchParams] = useSearchParams();
-  const videos = useRelatedVideos(searchParams?.get("v"));
-  const videoInfo = useVideoInfo(searchParams?.get("v"));
+  const videoId = searchParams.get("v");
+  const videos = useRelatedVideos(videoId);
+  const videoInfo = useVideoInfo(videoId);
 
   return (
     <>
       <div className=" relative top-[-52px] lg:grid gap-5 lg:grid-cols-[1fr_400px]  ">
         <div>
           <iframe
-            className="w-full aspect-video self-start mb-3"
+            className="w-full aspect-video self-start mb-3 "
             src={
               "https://www.youtube.com/embed/" +
               searchParams.get("v") +
@@ -28,7 +29,7 @@ const Watch = () => {
           ></iframe>
 
           <WatchVideoInfo videoInfo={videoInfo} />
-          <section className="">comments</section>
+          <section className="">Comments</section>
         </div>
         <aside className="hidden lg:block">
           {videos?.map((video) => (

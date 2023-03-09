@@ -31,4 +31,20 @@
     .menu-open .videos > a{
         max-width: 250px;
     }
+
+    .cut-off-text:has(+ .cb:checked){
+        -webkit-line-clamp: initial;
+      }
+    .cb{
+        appearance: none;
+        cursor: pointer;
+    }
+    .cb::before{
+        content:"Show more"
+    }
+    .cb:checked::before{
+        content:"Show less"
+    }
+   
 }
+
